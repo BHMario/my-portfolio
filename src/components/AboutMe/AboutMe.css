@@ -1,0 +1,190 @@
+/* src/components/AboutMe/AboutMe.css */
+
+/* Estilo general para la página About Me */
+.about-me {
+  color: white;
+  min-height: 100vh;
+  text-align: center;
+  padding: 6rem 2rem;
+  background: linear-gradient(135deg, rgba(79, 70, 229, 0.8), rgba(67, 56, 202, 0.8)); /* Fondo igual que en Projects */
+}
+
+/* Título en About Me */
+.about-me h2 {
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  font-family: 'Poppins', sans-serif;
+  margin-bottom: 2rem;
+  animation: fadeInUp 1s ease-out forwards;
+}
+
+/* Botones en la página About Me */
+.about-me .about-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  animation: fadeInUp 1s ease-out forwards;
+  animation-delay: 0.5s;
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+
+.about-me .btn-about,
+.about-me .btn-outline {
+  padding: 0.75rem 1.5rem;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  flex: 1 1 auto;
+  min-width: 160px;
+  max-width: 240px;
+}
+
+.about-me .btn-about {
+  background-color: #4f46e5; /* Igual que el botón Projects */
+  color: white;
+}
+
+.about-me .btn-about:hover {
+  background-color: #6e5de0; /* Igual que el hover de Projects */
+  transform: scale(1.05);
+}
+
+.about-me .btn-outline {
+  background-color: transparent;
+  border: 2px solid #4f46e5;
+  color: #4f46e5;
+}
+
+.about-me .btn-outline:hover {
+  background-color: #4f46e5;
+  color: white;
+  transform: scale(1.05);
+}
+
+/* Dark Mode Styles */
+body.dark-mode .about-me {
+  background: linear-gradient(135deg, rgba(28, 27, 50, 0.95), rgba(12, 12, 30, 0.95)); /* Fondo más oscuro en modo oscuro */
+  color: #e0e0e0; /* Texto claro en modo oscuro */
+}
+
+body.dark-mode .about-me .btn-about {
+  background-color: #3730a3; /* Igual que el botón Projects en modo oscuro */
+}
+
+body.dark-mode .about-me .btn-about:hover {
+  background-color: #5145cd;
+}
+
+body.dark-mode .about-me .btn-outline {
+  border-color: #a5b4fc;
+  color: #a5b4fc;
+}
+
+body.dark-mode .about-me .btn-outline:hover {
+  background-color: #a5b4fc;
+  color: #1a1a1a;
+}
+
+/* Dark Mode Toggle Button */
+body.dark-mode .about-me .dark-mode-toggle {
+  background: none;
+  border: none;
+  font-size: 1.7rem;
+  cursor: pointer;
+  color: inherit;
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1000;
+  transition: transform 0.3s ease;
+}
+
+body.dark-mode .about-me .dark-mode-toggle:hover {
+  transform: scale(1.2);
+}
+
+/* Back to Home Icon Button */
+body.dark-mode .about-me .back-icon {
+  background-color: #3730a3;
+}
+
+body.dark-mode .about-me .back-icon:hover {
+  background-color: #5145cd;
+}
+
+.about-me .back-icon {
+  position: fixed;
+  top: 1.5rem;
+  left: 1.5rem;
+  width: 48px;
+  height: 48px;
+  background-color: #4f46e5;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  z-index: 1000;
+}
+
+.about-me .back-icon:hover {
+  transform: scale(1.1);
+  background-color: #6e5de0;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .about-me {
+    padding: 2rem 1rem;
+  }
+
+  .about-me h2 {
+    font-size: 1.5rem;
+  }
+
+  .about-me .about-buttons .btn,
+  .about-me .about-buttons .btn-outline {
+    font-size: 0.95rem;
+    padding: 0.6rem 1.2rem;
+  }
+
+  .about-me .back-icon {
+    top: 1.5rem;
+    left: 1.5rem;
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 1440px) {
+  .about-me {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .about-me h2 {
+    font-size: 2.5rem;
+  }
+
+  .about-me .about-buttons .btn,
+  .about-me .about-buttons .btn-outline {
+    font-size: 1.1rem;
+    padding: 1rem 2rem;
+  }
+}
