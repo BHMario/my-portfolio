@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://BHMario.github.io/<nombre-del-repositorio>/",
+  "homepage": "https://bhmario.github.io/my-portfolio/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
