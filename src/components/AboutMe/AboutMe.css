@@ -2,11 +2,18 @@
 
 /* Estilo general para la página About Me */
 .about-me {
-  color: white;
+  display: flex;
+  flex-direction: column;
   min-height: 100vh;
+  color: white;
   text-align: center;
   padding: 6rem 2rem;
-  background: linear-gradient(135deg, rgba(79, 70, 229, 0.8), rgba(67, 56, 202, 0.8)); /* Fondo igual que en Projects */
+  background: linear-gradient(135deg, rgba(79, 70, 229, 0.8), rgba(67, 56, 202, 0.8));
+}
+
+/* Contenedor flexible para estirar el contenido y empujar el footer hacia abajo */
+.about-me .content {
+  flex: 1;
 }
 
 /* Título en About Me */
@@ -42,12 +49,12 @@
 }
 
 .about-me .btn-about {
-  background-color: #4f46e5; /* Igual que el botón Projects */
+  background-color: #4f46e5;
   color: white;
 }
 
 .about-me .btn-about:hover {
-  background-color: #6e5de0; /* Igual que el hover de Projects */
+  background-color: #6e5de0;
   transform: scale(1.05);
 }
 
@@ -65,12 +72,12 @@
 
 /* Dark Mode Styles */
 body.dark-mode .about-me {
-  background: linear-gradient(135deg, rgba(28, 27, 50, 0.95), rgba(12, 12, 30, 0.95)); /* Fondo más oscuro en modo oscuro */
-  color: #e0e0e0; /* Texto claro en modo oscuro */
+  background: linear-gradient(135deg, rgba(28, 27, 50, 0.95), rgba(12, 12, 30, 0.95));
+  color: #e0e0e0;
 }
 
 body.dark-mode .about-me .btn-about {
-  background-color: #3730a3; /* Igual que el botón Projects en modo oscuro */
+  background-color: #3730a3;
 }
 
 body.dark-mode .about-me .btn-about:hover {
@@ -153,6 +160,7 @@ body.dark-mode .about-me .back-icon:hover {
 @media (max-width: 768px) {
   .about-me {
     padding: 2rem 1rem;
+    width: 100%; /* Aseguramos que ocupe todo el ancho */
   }
 
   .about-me h2 {
@@ -174,7 +182,7 @@ body.dark-mode .about-me .back-icon:hover {
 
 @media (min-width: 1440px) {
   .about-me {
-    max-width: 1200px;
+    
     margin: 0 auto;
   }
 

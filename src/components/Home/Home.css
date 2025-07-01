@@ -151,6 +151,65 @@ body.dark-mode .skill-card h4 {
   color: #a5b4fc;
 }
 
+/* Social Media */
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+  animation: fadeInUp 1s ease-out forwards;
+  animation-delay: 0.9s;
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+
+.social-icons a {
+  font-size: 1.8rem;
+  color: white;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #a5b4fc;
+  transform: scale(1.2);
+}
+
+.social-icon {
+  width: 55px;
+  height: 55px;
+  padding: 6px;
+  background-color: white;
+  border-radius: 50%;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+  object-fit: contain;
+}
+
+.social-icon:hover {
+  transform: scale(1.1);
+}
+
+
+body.dark-mode .social-icons a {
+  color: #e5e5e5;
+}
+
+body.dark-mode .social-icons a:hover {
+  color: #c7d2fe;
+}
+
+/* Animación reutilizada (si ya existe esta clase, puedes omitirla) */
+@keyframes fadeInUp {
+  0% {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
 .hero .hero-buttons {
   margin-top: 2rem;
   display: flex;
