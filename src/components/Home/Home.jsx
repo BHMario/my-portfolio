@@ -17,7 +17,7 @@ function Home({ isDarkMode, toggleDarkMode }) {
             My focus is on developing efficient, scalable, and user-friendly applications that make a real impact.
           </p>
           <p className="highlight">
-            What drives me is creating solutions that improve people's lives, always eager to learn and embrace new technologies.
+            What drives me is creating solutions that improve people's lives, always eager to learn and embrace new technologies
           </p>
 
           <div className="hero-buttons">
