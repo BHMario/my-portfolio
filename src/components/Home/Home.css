@@ -121,7 +121,6 @@
   width: 20px;
   height: 20px;
   object-fit: contain;
-  filter: grayscale(1);
   transition: filter 0.3s;
 }
 
@@ -129,10 +128,6 @@
   transform: translateY(-5px);
   background-color: #f0f4ff;
   box-shadow: 0 12px 20px rgba(0, 0, 0, 0.18);
-}
-
-.skill-card:hover img {
-  filter: none;
 }
 
 /* Dark mode styles for skills */

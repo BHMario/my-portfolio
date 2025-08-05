@@ -1,133 +1,215 @@
-/* src/components/AboutMe/AboutMe.css */
-
-/* Estilo general para la página About Me */
+/* General layout */
 .about-me {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  color: white;
-  text-align: center;
   padding: 6rem 2rem;
-  background: linear-gradient(135deg, rgba(79, 70, 229, 0.8), rgba(67, 56, 202, 0.8));
+  background: linear-gradient(
+    135deg,
+    rgba(79, 70, 229, 0.8),
+    rgba(67, 56, 202, 0.8)
+  );
+  color: white;
 }
 
-/* Contenedor flexible para estirar el contenido y empujar el footer hacia abajo */
-.about-me .content {
-  flex: 1;
-}
-
-/* Título en About Me */
-.about-me h2 {
-  font-size: clamp(2rem, 6vw, 3.5rem);
-  font-family: 'Poppins', sans-serif;
-  margin-bottom: 2rem;
-  animation: fadeInUp 1s ease-out forwards;
-}
-
-/* Botones en la página About Me */
-.about-me .about-buttons {
+/* Block container */
+.block {
   display: flex;
-  flex-wrap: wrap;
+  align-items: center;
   justify-content: center;
-  gap: 1rem;
-  animation: fadeInUp 1s ease-out forwards;
-  animation-delay: 0.5s;
+  gap: 2rem;
+  margin: 4rem 0;
+  flex-wrap: wrap;
+  flex-direction: row; /* Default: image left, text right */
   opacity: 0;
-  animation-fill-mode: forwards;
+  transform: translateY(40px);
+  animation: fadeInUp 1s ease forwards;
 }
 
-.about-me .btn-about,
-.about-me .btn-outline {
+.block.reverse {
+  flex-direction: row-reverse; /* Reverse: image right, text left */
+}
+
+.block:nth-child(1) {
+  animation-delay: 0.2s;
+}
+.block:nth-child(2) {
+  animation-delay: 0.4s;
+}
+.block:nth-child(3) {
+  animation-delay: 0.6s;
+}
+.block:nth-child(4) {
+  animation-delay: 0.8s;
+}
+.block:nth-child(5) {
+  animation-delay: 1s;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Block image */
+.block-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.block-image img {
+  max-width: 100%;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.block-image img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Block text */
+.block-text {
+  flex: 1;
+  max-width: 600px;
+}
+
+.block-text h2 {
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  margin-bottom: 1rem;
+}
+
+.block-text p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* Skills list */
+.skills-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 1rem;
+}
+
+.skills-list li {
+  margin: 0.5rem 0;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  display: inline-block;
+  margin-right: 0.5rem;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.skills-list li:hover {
+  transform: translateY(-3px);
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Buttons */
+.hero-buttons {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.btn {
   padding: 0.75rem 1.5rem;
   font-size: 1.1rem;
   border-radius: 8px;
   text-decoration: none;
   transition: all 0.3s ease;
-  flex: 1 1 auto;
   min-width: 160px;
-  max-width: 240px;
+  text-align: center;
 }
 
-.about-me .btn-about {
-  background-color: #4f46e5;
+/* Botón de Proyectos */
+.btn-projects {
+  background-color: #4f46e5; /* Azul violeta */
   color: white;
 }
 
-.about-me .btn-about:hover {
-  background-color: #6e5de0;
+.btn-projects:hover {
+  background-color: #4338ca; /* Azul más oscuro */
   transform: scale(1.05);
 }
 
-.about-me .btn-outline {
-  background-color: transparent;
-  border: 2px solid #4f46e5;
-  color: #4f46e5;
-}
-
-.about-me .btn-outline:hover {
-  background-color: #4f46e5;
+/* Botón de CV */
+.btn-cv {
+  background-color: #2c3e50; /* Gris azulado */
   color: white;
+  animation: glowPulse 2.5s ease-in-out infinite;
+}
+
+.btn-cv:hover {
+  background-color: #34495e; /* Gris azulado más oscuro */
   transform: scale(1.05);
 }
 
-/* Dark Mode Styles */
+/* Animación glowPulse */
+@keyframes glowPulse {
+  0%, 100% {
+    box-shadow: 0 0 0px rgba(255, 255, 255, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+  }
+}
+
+/* Dark Mode */
 body.dark-mode .about-me {
-  background: linear-gradient(135deg, rgba(28, 27, 50, 0.95), rgba(12, 12, 30, 0.95));
+  background: linear-gradient(135deg, #1c1b32, #0c0c1e);
   color: #e0e0e0;
 }
 
-body.dark-mode .about-me .btn-about {
+body.dark-mode .btn-projects {
   background-color: #3730a3;
 }
 
-body.dark-mode .about-me .btn-about:hover {
+body.dark-mode .btn-projects:hover {
   background-color: #5145cd;
 }
 
-body.dark-mode .about-me .btn-outline {
-  border-color: #a5b4fc;
-  color: #a5b4fc;
+body.dark-mode .btn-cv {
+  background-color: #1c1c1c;
 }
 
-body.dark-mode .about-me .btn-outline:hover {
-  background-color: #a5b4fc;
-  color: #1a1a1a;
+body.dark-mode .btn-cv:hover {
+  background-color: #2c2c2c;
 }
 
-/* Dark Mode Toggle Button */
-body.dark-mode .about-me .dark-mode-toggle {
+/* Dark mode toggle */
+.dark-mode-toggle {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
   background: none;
   border: none;
   font-size: 1.7rem;
   cursor: pointer;
   color: inherit;
-  position: fixed;
-  top: 1rem;
-  right: 1rem;
-  z-index: 1000;
   transition: transform 0.3s ease;
+  z-index: 1000;
 }
 
-body.dark-mode .about-me .dark-mode-toggle:hover {
+.dark-mode-toggle:hover {
   transform: scale(1.2);
 }
 
-/* Back to Home Icon Button */
-body.dark-mode .about-me .back-icon {
-  background-color: #3730a3;
-}
-
-body.dark-mode .about-me .back-icon:hover {
-  background-color: #5145cd;
-}
-
-.about-me .back-icon {
+/* Back button */
+.back-icon {
   position: fixed;
   top: 1.5rem;
   left: 1.5rem;
   width: 48px;
   height: 48px;
-  background-color: #4f46e5;
+  background-color: #218838; /* Verde más claro por defecto */
   color: white;
   border-radius: 50%;
   display: flex;
@@ -139,60 +221,27 @@ body.dark-mode .about-me .back-icon:hover {
   z-index: 1000;
 }
 
-.about-me .back-icon:hover {
+.back-icon:hover {
   transform: scale(1.1);
-  background-color: #6e5de0;
+  background-color: #10b981; /* Verde más oscuro al hover */
 }
 
-/* Animations */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Responsive Design */
+/* Responsive */
 @media (max-width: 768px) {
-  .about-me {
-    padding: 2rem 1rem;
-    width: 100%; /* Aseguramos que ocupe todo el ancho */
+  .block {
+    flex-direction: column;
+    text-align: center;
   }
 
-  .about-me h2 {
-    font-size: 1.5rem;
+  .block.reverse {
+    flex-direction: column;
   }
 
-  .about-me .about-buttons .btn,
-  .about-me .about-buttons .btn-outline {
-    font-size: 0.95rem;
-    padding: 0.6rem 1.2rem;
+  .about-buttons {
+    justify-content: center;
   }
 
-  .about-me .back-icon {
-    top: 1.5rem;
-    left: 1.5rem;
-    font-size: 1.5rem;
-  }
-}
-
-@media (min-width: 1440px) {
-  .about-me {
-    
-    margin: 0 auto;
-  }
-
-  .about-me h2 {
-    font-size: 2.5rem;
-  }
-
-  .about-me .about-buttons .btn,
-  .about-me .about-buttons .btn-outline {
-    font-size: 1.1rem;
-    padding: 1rem 2rem;
+  .block-text {
+    max-width: 100%;
   }
 }

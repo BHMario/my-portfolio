@@ -17,7 +17,7 @@ function Home({ isDarkMode, toggleDarkMode }) {
             My focus is on developing efficient, scalable, and user-friendly applications that make a real impact.
           </p>
           <p className="highlight">
-            What drives me is creating solutions that improve people's lives, always eager to learn and embrace new technologies
+            What drives me is creating solutions that improve people's lives, always eager to learn and embrace new technologies.
           </p>
 
           <div className="hero-buttons">
@@ -43,12 +43,12 @@ function Home({ isDarkMode, toggleDarkMode }) {
             <div className="skill-card">
               <h4>Frontend</h4>
               <ul>
-                <li><img src="/icons/react.svg" alt="React" />React</li>
-                <li><img src="/icons/html.svg" alt="HTML" />HTML</li>
-                <li><img src="/icons/css.svg" alt="CSS" />CSS</li>
-                <li><img src="/icons/js.svg" alt="JavaScript" />JavaScript</li>
-                <li><img src="/icons/typescript.svg" alt="TypeScript" />TypeScript</li>
-                <li><img src="/icons/bootstrap.svg" alt="Bootstrap" />Bootstrap</li>
+                <li><img src="/my-portfolio/icons/frontend/reactLogo.png" alt="React" />React</li>
+                <li><img src="/my-portfolio/icons/frontend/htmlLogo.png" alt="HTML" />HTML</li>
+                <li><img src="/my-portfolio/icons/frontend/cssLogo.png" alt="CSS" />CSS</li>
+                <li><img src="/my-portfolio/icons/frontend/jsLogo.png" alt="JavaScript" />JavaScript</li>
+                <li><img src="/my-portfolio/icons/frontend/tsLogo.png" alt="TypeScript" />TypeScript</li>
+                <li><img src="/my-portfolio/icons/frontend/bootstrapLogo.png" alt="Bootstrap" />Bootstrap</li>
               </ul>
             </div>
 
@@ -56,9 +56,9 @@ function Home({ isDarkMode, toggleDarkMode }) {
             <div className="skill-card">
               <h4>Backend</h4>
               <ul>
-                <li><img src="/icons/java.svg" alt="Java" />Java</li>
-                <li><img src="/icons/mysql.svg" alt="MySQL" />MySQL</li>
-                <li><img src="/icons/node.svg" alt="Node.js" />Node.js</li>
+                <li><img src="/my-portfolio/icons/backend/javaLogo.png" alt="Java" />Java</li>
+                <li><img src="/my-portfolio/icons/backend/mysqlLogo.png" alt="MySQL" />MySQL</li>
+                <li><img src="/my-portfolio/icons/backend/nodejsLogo.png" alt="Node.js" />Node.js</li>
               </ul>
             </div>
 
@@ -66,8 +66,8 @@ function Home({ isDarkMode, toggleDarkMode }) {
             <div className="skill-card">
               <h4>Frameworks</h4>
               <ul>
-                <li><img src="/icons/springboot.svg" alt="Spring Boot" />Spring Boot</li>
-                <li><img src="/icons/angular.svg" alt="Angular" />Angular</li>
+                <li><img src="/my-portfolio/icons/frameworks/springbootLogo.png" alt="Spring Boot" />Spring Boot</li>
+                <li><img src="/my-portfolio/icons/frameworks/angularLogo.png" alt="Angular" />Angular</li>
               </ul>
             </div>
 
@@ -75,13 +75,13 @@ function Home({ isDarkMode, toggleDarkMode }) {
             <div className="skill-card">
               <h4>Tools</h4>
               <ul>
-                <li><img src="/icons/eclipse.svg" alt="Eclipse" />Eclipse</li>
-                <li><img src="/icons/idea.svg" alt="IntelliJ IDEA" />IntelliJ IDEA</li>
-                <li><img src="/icons/vscode.svg" alt="VS Code" />Visual Studio Code</li>
-                <li><img src="/icons/mysql-workbench.svg" alt="MySQL Workbench" />MySQL Workbench</li>
-                <li><img src="/icons/git.svg" alt="Git" />Git</li>
-                <li><img src="/icons/github.svg" alt="GitHub" />GitHub</li>
-                <li><img src="/icons/figma.svg" alt="Figma" />Figma</li>
+                <li><img src="/my-portfolio/icons/tools/eclipseLogo.png" alt="Eclipse" />Eclipse</li>
+                <li><img src="/my-portfolio/icons/tools/intellijLogo.png" alt="IntelliJ IDEA" />IntelliJ IDEA</li>
+                <li><img src="/my-portfolio/icons/tools/vscodeLogo.png" alt="VS Code" />Visual Studio Code</li>
+                <li><img src="/my-portfolio/icons/tools/mysqlworkbenchLogo.png" alt="MySQL Workbench" />MySQL Workbench</li>
+                <li><img src="/my-portfolio/icons/tools/gitLogo.png" alt="Git" />Git</li>
+                <li><img src="/my-portfolio/icons/tools/githubLogo.png" alt="GitHub" />GitHub</li>
+                <li><img src="/my-portfolio/icons/tools/figmaLogo.png" alt="Figma" />Figma</li>
               </ul>
             </div>
           </div>

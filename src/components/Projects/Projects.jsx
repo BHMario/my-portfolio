@@ -6,18 +6,32 @@ import Footer from '../Footer/Footer';
 function Projects({ isDarkMode, toggleDarkMode }) {
   const projects = [
     {
-      title: 'Project One',
-      description: 'A description of project one.',
-      technologies: ['React', 'Node.js', 'MongoDB'],
-      demoUrl: 'https://project-one.com',
-      githubUrl: 'https://github.com/yourusername/project-one',
+      title: 'Elysium-Vape',
+      description: 'An online vape shop interface showcasing a modern product catalog, shopping cart design. Built to demonstrate e-commerce UI concepts without purchase functionality',
+      technologies: ['HTML5', 'CSS', 'JavaScript'],
+      demoUrl: '//URL de la demo (githubPages) del proyecto correspondiente', //TO DO: Replace with actual demo URL
+      githubUrl: 'https://github.com/BHMario/Elysium-Vape',
     },
     {
-      title: 'Project Two',
-      description: 'A description of project two.',
-      technologies: ['Flutter', 'Dart'],
-      demoUrl: 'https://project-two.com',
-      githubUrl: 'https://github.com/yourusername/project-two',
+      title: 'TriviaIlerna',
+      description: 'A trivia application with categorized questions by topic and difficulty. Includes user authentication, role-based access (player/admin), and a relational database to manage users and game data',
+      technologies: ['Java', 'SQL'],
+      demoUrl: '//URL de la demo (githubPages) del proyecto correspondiente', //TO DO: Replace with actual demo URL
+      githubUrl: '//URL del repositorio de GitHub del proyecto correspondiente', //TO DO: Replace with actual GitHub URL
+    },
+    {
+      title: 'BusTracker',
+      description: 'Bus simulation app built with Java Swing and Leaflet.js. It generates routes, displays them on interactive maps, shows statistics, allows route editing, and exports data to JSON',
+      technologies: ['Java (Swing, AWT, I/O)', 'Leaflet.js', 'JSON'],
+      demoUrl: '//URL de la demo (githubPages) del proyecto correspondiente', //TO DO: Replace with actual demo URL
+      githubUrl: '//URL del repositorio de GitHub del proyecto correspondiente', //TO DO: Replace with actual GitHub URL
+    },
+    {
+      title: 'Videogame Hispalis',
+      description: 'A simplified homage to Darkest Dungeon: a turn-based Java Swing fighting game where you battle bots that deal randomized damage each turn. Built as a learning exercise to master event-driven GUIs and game mechanics.',
+      technologies: ['Java (Swing, AWT, I/O)'],
+      demoUrl: '//URL de la demo (githubPages) del proyecto correspondiente', //TO DO: Replace with actual demo URL
+      githubUrl: '//URL del repositorio de GitHub del proyecto correspondiente', //TO DO: Replace with actual GitHub URL
     },
   ];
 

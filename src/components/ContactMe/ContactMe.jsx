@@ -1,5 +1,6 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import emailjs from '@emailjs/browser';
 import './ContactMe.css';
 import Footer from '../Footer/Footer.jsx';
 
@@ -11,31 +12,14 @@ function ContactMe({ isDarkMode, toggleDarkMode }) {
     message: ''
   });
 
-  const [formErrors, setFormErrors] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
-  });
-
+  const [formErrors, setFormErrors] = useState({});
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
+  const formRef = useRef(null);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const errors = validateForm();
-    if (Object.keys(errors).length === 0) {
-      setIsSubmitted(true);
-      alert('Formulario enviado correctamente.');
-      setFormData({ name: '', email: '', subject: '', message: '' });
-    } else {
-      setFormErrors(errors);
-      setIsSubmitted(false);
-    }
   };
 
   const validateForm = () => {
@@ -48,10 +32,37 @@ function ContactMe({ isDarkMode, toggleDarkMode }) {
     return errors;
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const errors = validateForm();
+    setFormErrors(errors);
+
+    if (Object.keys(errors).length === 0) {
+      // Agregar timestamp antes de enviar
+      formRef.current.time.value = new Date().toLocaleString();
+
+      emailjs
+        .sendForm('service_0v217sh', 'template_de0dalk', formRef.current, 'mZVqIuie_VDpKBONJ')
+        .then(() => {
+          setIsSubmitted(true);
+          setFormData({ name: '', email: '', subject: '', message: '' });
+          setErrorMessage('');
+        })
+        .catch((error) => {
+          console.error('EmailJS Error:', error);
+          setErrorMessage('Hubo un error al enviar el formulario. Intenta más tarde.');
+          setIsSubmitted(false);
+        });
+    } else {
+      setIsSubmitted(false);
+    }
+  };
+
   const handleReset = () => {
     setFormData({ name: '', email: '', subject: '', message: '' });
     setFormErrors({});
     setIsSubmitted(false);
+    setErrorMessage('');
   };
 
   return (
@@ -74,7 +85,9 @@ function ContactMe({ isDarkMode, toggleDarkMode }) {
           </svg>
         </Link>
 
-        <form onSubmit={handleSubmit} className="contact-form">
+        <form ref={formRef} onSubmit={handleSubmit} className="contact-form">
+          <input type="hidden" name="time" />
+
           <div className="form-group">
             <label htmlFor="name">Name</label>
             <input
@@ -134,6 +147,7 @@ function ContactMe({ isDarkMode, toggleDarkMode }) {
           <button type="button" onClick={handleReset} className="btn-reset">Reset</button>
 
           {isSubmitted && <p className="success-message">Formulario enviado correctamente.</p>}
+          {errorMessage && <p className="error">{errorMessage}</p>}
         </form>
       </main>
 
