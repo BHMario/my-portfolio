@@ -1,71 +1,132 @@
-import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import ProjectCard from './ProjectCard';
 import './Projects.css';
-import Footer from '../Footer/Footer';
 
-function Projects({ isDarkMode, toggleDarkMode }) {
-  const projects = [
-    {
-      title: 'Elysium-Vape',
-      description: 'An online vape shop interface showcasing a modern product catalog, shopping cart design. Built to demonstrate e-commerce UI concepts without purchase functionality',
-      technologies: ['HTML5', 'CSS', 'JavaScript'],
-      demoUrl: '//URL de la demo (githubPages) del proyecto correspondiente', //TO DO: Replace with actual demo URL
-      githubUrl: 'https://github.com/BHMario/Elysium-Vape',
-    },
-    {
-      title: 'TriviaIlerna',
-      description: 'A trivia application with categorized questions by topic and difficulty. Includes user authentication, role-based access (player/admin), and a relational database to manage users and game data',
-      technologies: ['Java', 'SQL'],
-      demoUrl: '//URL de la demo (githubPages) del proyecto correspondiente', //TO DO: Replace with actual demo URL
-      githubUrl: '//URL del repositorio de GitHub del proyecto correspondiente', //TO DO: Replace with actual GitHub URL
-    },
-    {
-      title: 'BusTracker',
-      description: 'Bus simulation app built with Java Swing and Leaflet.js. It generates routes, displays them on interactive maps, shows statistics, allows route editing, and exports data to JSON',
-      technologies: ['Java (Swing, AWT, I/O)', 'Leaflet.js', 'JSON'],
-      demoUrl: '//URL de la demo (githubPages) del proyecto correspondiente', //TO DO: Replace with actual demo URL
-      githubUrl: '//URL del repositorio de GitHub del proyecto correspondiente', //TO DO: Replace with actual GitHub URL
-    },
-    {
-      title: 'Videogame Hispalis',
-      description: 'A simplified homage to Darkest Dungeon: a turn-based Java Swing fighting game where you battle bots that deal randomized damage each turn. Built as a learning exercise to master event-driven GUIs and game mechanics.',
-      technologies: ['Java (Swing, AWT, I/O)'],
-      demoUrl: '//URL de la demo (githubPages) del proyecto correspondiente', //TO DO: Replace with actual demo URL
-      githubUrl: '//URL del repositorio de GitHub del proyecto correspondiente', //TO DO: Replace with actual GitHub URL
-    },
-  ];
+/*
+ * Curated project dataset based on real GitHub repos.
+ * Using static data instead of live API calls for:
+ *   1. No rate-limit issues (GitHub API: 60 req/hr unauthenticated)
+ *   2. Full control over descriptions, tech tags, and ordering
+ *   3. Zero loading delay — instant render
+ *   4. Works offline / behind firewalls
+ *
+ * To update: edit this array when you publish new projects.
+ */
+const projects = [
+  {
+    title: 'Personal Portfolio',
+    description:
+      'Modern single-page portfolio built with React and Vite. Features a custom design system, dark/light mode, scroll-triggered animations with Framer Motion, and a fully functional contact form.',
+    technologies: ['React', 'Vite', 'CSS', 'Framer Motion'],
+    category: 'frontend',
+    githubUrl: 'https://github.com/BHMario/my-portfolio',
+    demoUrl: 'https://bhmario.github.io/my-portfolio/',
+  },
+  {
+    title: 'Finova (In Development)',
+    description:
+      'Personal SaaS finance dashboard featuring multi-currency support and comprehensive financial tracking. Built with modern web technologies, still in early active development.',
+    technologies: ['React', 'TypeScript', 'Vite', 'MySQL'],
+    category: 'fullstack',
+    githubUrl: 'https://github.com/BHMario/Finova',
+    demoUrl: null,
+  },
+  {
+    title: 'Zen',
+    description:
+      'Cross-platform mobile application built with Flutter and Dart. Demonstrates multiplatform development skills with modern reactive UI patterns and state management.',
+    technologies: ['Dart', 'Flutter', 'Mobile'],
+    category: 'mobile',
+    githubUrl: 'https://github.com/BHMario/zen',
+    demoUrl: null,
+  },
+  {
+    title: 'BusTracker',
+    description:
+      'Bus route simulation app with interactive mapping. Generates routes, displays them on Leaflet.js maps, shows statistics, and exports data to JSON.',
+    technologies: ['Java', 'Swing', 'Leaflet.js', 'JSON'],
+    category: 'fullstack',
+    githubUrl: 'https://github.com/BHMario/BUSTracker',
+    demoUrl: null,
+  },
+  {
+    title: 'Hotel Management System',
+    description:
+      'Full-stack hotel management application with PHP backend. Features room booking, guest management, and a responsive admin panel for hotel operations.',
+    technologies: ['PHP', 'MySQL', 'HTML', 'CSS'],
+    category: 'fullstack',
+    githubUrl: 'https://github.com/BHMario/SistemaGestionHotelera',
+    demoUrl: null,
+  },
+  {
+    title: 'TriviaIlerna',
+    description:
+      'Trivia application with categorized questions by topic and difficulty. Includes user authentication, role-based access control, and a relational database backend.',
+    technologies: ['Java', 'MySQL', 'JDBC'],
+    category: 'backend',
+    githubUrl: 'https://github.com/BHMario/TriviaIlerna',
+    demoUrl: null,
+  },
+];
 
+const containerVariants = {
+  hidden: {},
+  visible: {
+    transition: { staggerChildren: 0.12 },
+  },
+};
+
+function Projects() {
   return (
-    <div className="page-container">
-      <main id="projects" className="projects" aria-label="List of projects developed by Mario">
-        <button
-          className="dark-mode-toggle"
-          onClick={toggleDarkMode}
-          aria-label="Toggle Dark Mode"
+    <section id="projects" className="projects section" aria-label="Projects developed by Mario">
+      <div className="container">
+        <motion.div
+          className="section-header"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-100px' }}
+          transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
         >
-          {isDarkMode ? '🌞' : '🌙'}
-        </button>
+          <span className="section-label">Projects</span>
+          <h2>Featured Projects</h2>
+          <p>A selection of projects I've built — from frontend interfaces to full-stack applications.</p>
+        </motion.div>
 
-        <h2>My Projects</h2>
-
-        <Link to="/" className="back-icon" aria-label="Back to Home">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
-            viewBox="0 0 20 20">
-            <path fillRule="evenodd" d="M7.707 14.707a1 1 0 01-1.414 0l-5-5a1 1 0 010-1.414l5-5a1 1 0 111.414 1.414L4.414 8H17a1 1 0 110 2H4.414l3.293 3.293a1 1 0 010 1.414z"
-              clipRule="evenodd" />
-          </svg>
-        </Link>
-
-        <div className="projects-list">
+        <motion.div
+          className="projects__grid"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: '-80px' }}
+        >
           {projects.map((project, index) => (
-            <ProjectCard key={index} {...project} />
+            <ProjectCard key={project.title} project={project} index={index} />
           ))}
-        </div>
-      
-      </main>
-      
-      <Footer isDarkMode={isDarkMode} />
-    </div>
+        </motion.div>
+
+        {/* GitHub CTA */}
+        <motion.div
+          className="projects__cta"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-50px' }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+        >
+          <a
+            href="https://github.com/BHMario"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn btn-outline"
+          >
+            View all projects on GitHub
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <line x1="7" y1="17" x2="17" y2="7" />
+              <polyline points="7 7 17 7 17 17" />
+            </svg>
+          </a>
+        </motion.div>
+      </div>
+    </section>
   );
 }
 

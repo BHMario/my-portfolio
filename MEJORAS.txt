@@ -1,0 +1,3 @@
+Quitar los proyectos privados del GitHub (elysium vape)
+Añadir los nuevos proyectos del GitHub
+Hacer funcionar el apartado "Contacto"

@@ -1,52 +1,40 @@
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import { useEffect, useState } from 'react';
-import Home from './components/Home/Home';
+import { useState, useEffect } from 'react';
+import Navbar from './components/Navbar/Navbar';
+import Hero from './components/Hero/Hero';
+import About from './components/About/About';
+import Skills from './components/Skills/Skills';
 import Projects from './components/Projects/Projects';
-import AboutMe from './components/AboutMe/AboutMe';
-import ContactMe from './components/ContactMe/ContactMe';
+import Contact from './components/Contact/Contact';
+import Footer from './components/Footer/Footer';
+import ScrollToTop from './components/ScrollToTop/ScrollToTop';
 
 function App() {
-  const [isDarkMode, setIsDarkMode] = useState(() => {
-    // Leer del localStorage al iniciar
-    return localStorage.getItem('dark-mode') === 'true';
+  const [theme, setTheme] = useState(() => {
+    return localStorage.getItem('theme') || 'light';
   });
 
   useEffect(() => {
-    // Aplicar clase al <body>
-    if (isDarkMode) {
-      document.body.classList.add('dark-mode');
-    } else {
-      document.body.classList.remove('dark-mode');
-    }
-    // Guardar preferencia
-    localStorage.setItem('dark-mode', isDarkMode.toString());
-  }, [isDarkMode]);
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
+  }, [theme]);
 
-  const toggleDarkMode = () => {
-    setIsDarkMode(prev => !prev);
+  const toggleTheme = () => {
+    setTheme(prev => (prev === 'light' ? 'dark' : 'light'));
   };
 
   return (
-    <Router basename='/my-portfolio'>
-      <Routes>
-        <Route
-          path="/"
-          element={<Home isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />}
-        />
-        <Route
-          path="/projects"
-          element={<Projects isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />}
-        />
-        <Route
-          path="/about"
-          element={<AboutMe isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />}
-        />
-        <Route
-          path="/contact"
-          element={<ContactMe isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />}
-        />
-      </Routes>
-    </Router>
+    <>
+      <Navbar theme={theme} toggleTheme={toggleTheme} />
+      <main>
+        <Hero />
+        <About />
+        <Skills />
+        <Projects />
+        <Contact />
+      </main>
+      <Footer />
+      <ScrollToTop />
+    </>
   );
 }
 

@@ -1,0 +1,114 @@
+/* ============================================================
+   SKILLS / TECH STACK SECTION
+   ============================================================ */
+
+.skills {
+  background-color: var(--bg-primary);
+}
+
+
+/* ----- Grid of categories ----- */
+.skills__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-6);
+}
+
+
+/* ----- Category block ----- */
+.skills__category {
+  background-color: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-8);
+  transition: border-color var(--duration-normal) var(--ease-out);
+}
+
+.skills__category:hover {
+  border-color: var(--accent);
+}
+
+.skills__category-header {
+  margin-bottom: var(--space-6);
+}
+
+.skills__category-title {
+  font-size: var(--text-lg);
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: var(--space-1);
+}
+
+.skills__category-desc {
+  font-size: var(--text-xs);
+  color: var(--text-tertiary);
+  line-height: var(--leading-relaxed);
+}
+
+
+/* ----- Items within a category ----- */
+.skills__items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.skills__item {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  transition: all var(--duration-normal) var(--ease-out);
+  cursor: default;
+}
+
+.skills__item:hover {
+  border-color: var(--accent);
+  background-color: var(--accent-subtle);
+  box-shadow: var(--shadow-sm);
+}
+
+
+/* ----- Icon ----- */
+.skills__icon {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+
+/* ----- Skill name ----- */
+.skills__name {
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--text-primary);
+  white-space: nowrap;
+}
+
+
+/* ----- Responsive ----- */
+@media (max-width: 768px) {
+  .skills__grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-5);
+  }
+
+  .skills__category {
+    padding: var(--space-6);
+  }
+}
+
+@media (min-width: 1024px) {
+  .skills__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* Make the first category span 2 columns for emphasis (Core Languages) */
+  .skills__category:first-child {
+    grid-column: span 2;
+  }
+}

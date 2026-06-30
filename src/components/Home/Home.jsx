@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import './Home.css';
 import Footer from '../Footer/Footer.jsx';
+import cvFile from '../../assets/MarioSanchezRuiz_CV.pdf';
 
 function Home({ isDarkMode, toggleDarkMode }) {
   return (
@@ -11,7 +12,7 @@ function Home({ isDarkMode, toggleDarkMode }) {
           <h1>Hello, I'm <span className="highlight">Mario</span></h1>
           <h2>Multiplatform App Developer</h2>
           <p>
-            Crafting high-quality mobile apps using React Native and more. Open to international remote opportunities.
+            Crafting high-quality web and mobile apps. Open to international remote opportunities.
           </p>
           <p className="highlight">
             My focus is on developing efficient, scalable, and user-friendly applications that make a real impact.
@@ -24,7 +25,7 @@ function Home({ isDarkMode, toggleDarkMode }) {
             <Link to="/projects" className="btn btn-projects" aria-label="Go to my projects">View Projects</Link>
             <Link to="/contact" className="btn btn-contact" aria-label="Contact me">Contact Me</Link>
             <Link to="/about" className="btn btn-about" aria-label="Learn about me">About Me</Link>
-            <a href="/CV-Mario.pdf" download="CV-MarioSanchezRuiz" className="btn btn-cv" aria-label="Download my CV as PDF">Download CV</a>
+            <a href={cvFile} download="MarioSanchezRuiz_CV" className="btn btn-cv" aria-label="Download my CV as PDF">Download CV</a>
           </div>
 
           <button
@@ -43,12 +44,12 @@ function Home({ isDarkMode, toggleDarkMode }) {
             <div className="skill-card">
               <h4>Frontend</h4>
               <ul>
-                <li><img src="/my-portfolio/icons/frontend/reactLogo.png" alt="React" />React</li>
-                <li><img src="/my-portfolio/icons/frontend/htmlLogo.png" alt="HTML" />HTML</li>
-                <li><img src="/my-portfolio/icons/frontend/cssLogo.png" alt="CSS" />CSS</li>
-                <li><img src="/my-portfolio/icons/frontend/jsLogo.png" alt="JavaScript" />JavaScript</li>
-                <li><img src="/my-portfolio/icons/frontend/tsLogo.png" alt="TypeScript" />TypeScript</li>
-                <li><img src="/my-portfolio/icons/frontend/bootstrapLogo.png" alt="Bootstrap" />Bootstrap</li>
+                <li><img src="/my-portfolio/icons/frameworks-libraries/reactLogo.png" alt="React" />React</li>
+                <li><img src="/my-portfolio/icons/core-languages/htmlLogo.png" alt="HTML" />HTML</li>
+                <li><img src="/my-portfolio/icons/core-languages/cssLogo.png" alt="CSS" />CSS</li>
+                <li><img src="/my-portfolio/icons/core-languages/jsLogo.png" alt="JavaScript" />JavaScript</li>
+                <li><img src="/my-portfolio/icons/core-languages/tsLogo.png" alt="TypeScript" />TypeScript</li>
+                <li><img src="/my-portfolio/icons/styling-design/bootstrapLogo.png" alt="Bootstrap" />Bootstrap</li>
               </ul>
             </div>
 
@@ -56,9 +57,9 @@ function Home({ isDarkMode, toggleDarkMode }) {
             <div className="skill-card">
               <h4>Backend</h4>
               <ul>
-                <li><img src="/my-portfolio/icons/backend/javaLogo.png" alt="Java" />Java</li>
-                <li><img src="/my-portfolio/icons/backend/mysqlLogo.png" alt="MySQL" />MySQL</li>
-                <li><img src="/my-portfolio/icons/backend/nodejsLogo.png" alt="Node.js" />Node.js</li>
+                <li><img src="/my-portfolio/icons/core-languages/javaLogo.png" alt="Java" />Java</li>
+                <li><img src="/my-portfolio/icons/databases/mysqlLogo.png" alt="MySQL" />MySQL</li>
+                <li><img src="/my-portfolio/icons/frameworks-libraries/nodejsLogo.png" alt="Node.js" />Node.js</li>
               </ul>
             </div>
 
@@ -66,8 +67,8 @@ function Home({ isDarkMode, toggleDarkMode }) {
             <div className="skill-card">
               <h4>Frameworks</h4>
               <ul>
-                <li><img src="/my-portfolio/icons/frameworks/springbootLogo.png" alt="Spring Boot" />Spring Boot</li>
-                <li><img src="/my-portfolio/icons/frameworks/angularLogo.png" alt="Angular" />Angular</li>
+                <li><img src="/my-portfolio/icons/frameworks-libraries/springbootLogo.png" alt="Spring Boot" />Spring Boot</li>
+                <li><img src="/my-portfolio/icons/frameworks-libraries/angularLogo.png" alt="Angular" />Angular</li>
               </ul>
             </div>
 
@@ -75,13 +76,13 @@ function Home({ isDarkMode, toggleDarkMode }) {
             <div className="skill-card">
               <h4>Tools</h4>
               <ul>
-                <li><img src="/my-portfolio/icons/tools/eclipseLogo.png" alt="Eclipse" />Eclipse</li>
-                <li><img src="/my-portfolio/icons/tools/intellijLogo.png" alt="IntelliJ IDEA" />IntelliJ IDEA</li>
-                <li><img src="/my-portfolio/icons/tools/vscodeLogo.png" alt="VS Code" />Visual Studio Code</li>
-                <li><img src="/my-portfolio/icons/tools/mysqlworkbenchLogo.png" alt="MySQL Workbench" />MySQL Workbench</li>
-                <li><img src="/my-portfolio/icons/tools/gitLogo.png" alt="Git" />Git</li>
-                <li><img src="/my-portfolio/icons/tools/githubLogo.png" alt="GitHub" />GitHub</li>
-                <li><img src="/my-portfolio/icons/tools/figmaLogo.png" alt="Figma" />Figma</li>
+                <li><img src="/my-portfolio/icons/devops-tools/eclipseLogo.png" alt="Eclipse" />Eclipse</li>
+                <li><img src="/my-portfolio/icons/devops-tools/intellijLogo.png" alt="IntelliJ IDEA" />IntelliJ IDEA</li>
+                <li><img src="/my-portfolio/icons/devops-tools/vscodeLogo.png" alt="VS Code" />Visual Studio Code</li>
+                <li><img src="/my-portfolio/icons/devops-tools/mysqlworkbenchLogo.png" alt="MySQL Workbench" />MySQL Workbench</li>
+                <li><img src="/my-portfolio/icons/devops-tools/gitLogo.png" alt="Git" />Git</li>
+                <li><img src="/my-portfolio/icons/devops-tools/githubLogo.png" alt="GitHub" />GitHub</li>
+                <li><img src="/my-portfolio/icons/styling-design/figmaLogo.png" alt="Figma" />Figma</li>
               </ul>
             </div>
           </div>
