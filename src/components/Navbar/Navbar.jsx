@@ -77,7 +77,8 @@ function Navbar({ theme, toggleTheme }) {
   };
 
   return (
-    <motion.header
+    <>
+      <motion.header
       className={`navbar ${isScrolled ? 'navbar--scrolled' : ''}`}
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
@@ -158,8 +159,9 @@ function Navbar({ theme, toggleTheme }) {
         </div>
       </nav>
 
-      {/* Scroll progress bar */}
-      <motion.div className="navbar__progress" style={{ scaleX }} />
+        {/* Scroll progress bar */}
+        <motion.div className="navbar__progress" style={{ scaleX }} />
+      </motion.header>
 
       {/* Mobile menu overlay */}
       <AnimatePresence>
@@ -202,7 +204,7 @@ function Navbar({ theme, toggleTheme }) {
           </>
         )}
       </AnimatePresence>
-    </motion.header>
+    </>
   );
 }
 
