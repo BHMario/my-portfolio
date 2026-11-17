@@ -3,7 +3,7 @@ const ghpages = require('gh-pages');
 ghpages.publish('dist', {
   branch: 'gh-pages',
   dotfiles: true,
-  force: true,
+  history: false,
 }, (err) => {
   if (err) {
     console.error('Deploy failed:', err);
