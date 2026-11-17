@@ -19,6 +19,7 @@ const skillCategories = [
       { name: 'PHP', icon: `${BASE}/core-languages/phpLogo.png` },
       { name: 'Python', icon: `${BASE}/core-languages/pythonLogo.png` },
       { name: 'Java', icon: `${BASE}/core-languages/javaLogo.png` },
+      { name: 'Go', icon: `${BASE}/core-languages/goLogo.svg` },
     ],
   },
   {
@@ -31,6 +32,7 @@ const skillCategories = [
       { name: 'Liferay', icon: `${BASE}/frameworks-libraries/liferayLogo.png` },
       { name: 'Spring Boot', icon: `${BASE}/frameworks-libraries/springbootLogo.png` },
       { name: 'Node.js', icon: `${BASE}/frameworks-libraries/nodejsLogo.png` },
+      { name: 'Tailwind CSS', icon: `${BASE}/frameworks-libraries/tailwindLogo.svg` },
     ],
   },
   {
@@ -60,6 +62,7 @@ const skillCategories = [
       { name: 'VS Code', icon: `${BASE}/devops-tools/vscodeLogo.png` },
       { name: 'IntelliJ IDEA', icon: `${BASE}/devops-tools/intellijLogo.png` },
       { name: 'Eclipse', icon: `${BASE}/devops-tools/eclipseLogo.png` },
+      { name: 'Docker', icon: `${BASE}/devops-tools/dockerLogo.svg` },
     ],
   },
 

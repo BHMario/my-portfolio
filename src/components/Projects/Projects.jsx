@@ -23,12 +23,12 @@ const projects = [
     demoUrl: 'https://bhmario.github.io/my-portfolio/',
   },
   {
-    title: 'Finova (In Development)',
+    title: 'Orbit-SaaS',
     description:
-      'Personal SaaS finance dashboard featuring multi-currency support and comprehensive financial tracking. Built with modern web technologies, still in early active development.',
-    technologies: ['React', 'TypeScript', 'Vite', 'MySQL'],
+      'SaaS platform for project and task management, with team workspaces, dashboards, real-time updates, and automation tools. Designed with a scalable Go backend and a modern React interface.',
+    technologies: ['Go', 'React', 'TypeScript', 'PostgreSQL', 'Docker'],
     category: 'fullstack',
-    githubUrl: 'https://github.com/BHMario/Finova',
+    githubUrl: 'https://github.com/BHMario/Orbit-Saas',
     demoUrl: null,
   },
   {

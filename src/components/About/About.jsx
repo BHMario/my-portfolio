@@ -65,9 +65,9 @@ function About() {
             </div>
             <h3>Experience</h3>
             <p>
-              I have collaborated with teams to build
-              web and mobile applications. My experience covers both frontend
-              and backend, always focusing on clean code and usability.
+              Liferay Developer at Minsait (Indra Group), working across frontend
+              and backend web applications with Java and React. I have also gained
+              experience in IT systems and networking.
             </p>
           </motion.div>
 
@@ -87,9 +87,9 @@ function About() {
             </div>
             <h3>Education</h3>
             <p>
-              Higher Technician in Multiplatform Application Development (EQF Level 5).
-              I also keep learning through online courses
-              to stay up-to-date with the latest technologies.
+              Currently studying Artificial Intelligence and Big Data while completing
+              the Higher Vocational Training Diploma in Multiplatform Application
+              Development, building a strong foundation in software engineering.
             </p>
           </motion.div>
 

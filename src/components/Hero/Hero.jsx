@@ -22,10 +22,10 @@ const itemVariants = {
 
 /* --- Typewriter hook --- */
 const roles = [
-  'Frontend Developer',
+  'Software Developer',
   'React Developer',
-  'Frontend Developer focused on UI/UX',
-  'JavaScript Frontend Developer',
+  'Liferay Developer',
+  'Web & Mobile Developer',
 ];
 
 function useTypewriter(words, typingSpeed = 80, deletingSpeed = 50, pauseTime = 2000) {

@@ -57,10 +57,10 @@ function AboutMe({ isDarkMode, toggleDarkMode }) {
             <p>Some of the technologies I work with are:</p>
             <ul className="skills-list">
               <li>React / React Native</li>
-              <li>Java / Spring Boot</li>
-              <li>Node.js / Express</li>
-              <li>MongoDB / SQL</li>
-              <li>TailwindCSS</li>
+              <li>Java / Spring Boot / Liferay</li>
+              <li>TypeScript / Node.js</li>
+              <li>Go / PostgreSQL / SQL</li>
+              <li>Docker / AWS / Git</li>
               <li>Git & GitHub</li>
             </ul>
           </div>
@@ -74,9 +74,8 @@ function AboutMe({ isDarkMode, toggleDarkMode }) {
           <div className="block-text">
             <h2>Experience</h2>
             <p>
-              I have collaborated with teams to build
-              web and mobile applications. My experience covers both frontend
-              and backend, always focusing on clean code and usability.
+              Liferay Developer at Minsait (Indra Group), contributing to frontend
+              and backend web application development with Java and React.
             </p>
           </div>
         </div>
@@ -89,9 +88,9 @@ function AboutMe({ isDarkMode, toggleDarkMode }) {
           <div className="block-text">
             <h2>Education</h2>
             <p>
-              Higher Technician in Multiplatform Application Development (EQF Level 5).
-              I also keep learning through online courses
-              to stay up-to-date with the latest technologies.
+              Currently studying the Specialization Program in Artificial Intelligence
+              and Big Data. Higher Vocational Training Diploma in Multiplatform
+              Application Development completed.
             </p>
           </div>
         </div>
